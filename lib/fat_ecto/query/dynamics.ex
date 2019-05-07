@@ -2,7 +2,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
   import Ecto.Query
   alias FatEcto.FatHelper
   # TODO: Add docs and examples for ex_doc
-  @spec is_nil_dynamic(any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec is_nil_dynamic(any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def is_nil_dynamic(key, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do
@@ -31,7 +31,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec gt_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec gt_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def gt_dynamic(key, value, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if FatHelper.is_fat_ecto_field?(value) do
@@ -96,7 +96,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec gte_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec gte_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def gte_dynamic(key, value, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if FatHelper.is_fat_ecto_field?(value) do
@@ -161,7 +161,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec lte_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec lte_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def lte_dynamic(key, value, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if FatHelper.is_fat_ecto_field?(value) do
@@ -226,7 +226,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec lt_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec lt_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def lt_dynamic(key, value, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if FatHelper.is_fat_ecto_field?(value) do
@@ -291,7 +291,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec ilike_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec ilike_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def ilike_dynamic(key, value, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do
@@ -332,7 +332,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec like_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec like_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def like_dynamic(key, value, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do
@@ -373,7 +373,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec eq_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec eq_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def eq_dynamic(key, value, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do
@@ -402,7 +402,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec between_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec between_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def between_dynamic(key, values, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do
@@ -435,7 +435,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec between_equal_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec between_equal_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def between_equal_dynamic(key, values, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do
@@ -468,7 +468,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec in_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec in_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def in_dynamic(key, values, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do
@@ -497,7 +497,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec contains_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec contains_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def contains_dynamic(key, values, dynamics, opts \\ []) do
     # value = Enum.join(value, " ")
     # where: fragment("? @> ?::jsonb", c.exclusions, ^[dish_id])
@@ -529,7 +529,7 @@ defmodule FatEcto.FatQuery.FatDynamics do
     end
   end
 
-  @spec contains_any_dynamic(any(), any(), any(), nil | keyword() | map()) :: Ecto.Query.DynamicExpr.t()
+  @spec contains_any_dynamic(any(), any(), any(), nil | keyword() | map()) :: %Ecto.Query.DynamicExpr{}
   def contains_any_dynamic(key, values, dynamics, opts \\ []) do
     if opts[:binding] == :last do
       if opts[:dynamic_type] == :and do

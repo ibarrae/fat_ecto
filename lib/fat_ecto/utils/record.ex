@@ -34,7 +34,7 @@ defmodule FatUtils.FatRecord do
           _size ->
             record
             |> Tuple.to_list()
-            |> @encoder_library.Encoder.List.encode([])
+            |> @encoder_library.encode!()
         end
       end
 
