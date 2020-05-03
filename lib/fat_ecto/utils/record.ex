@@ -1,5 +1,8 @@
 defmodule FatUtils.FatRecord do
   @moduledoc false
+  # TODO: use behaviors
+  # TODO: make function names more specific to current module
+  # TODO: add docs
   defmacro __using__(options) do
     quote location: :keep do
       @opt_app unquote(options)[:otp_app]

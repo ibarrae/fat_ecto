@@ -1,5 +1,8 @@
 defmodule FatEcto.View do
   @moduledoc false
+  # TODO: use behaviors
+  # TODO: make function names more specific to current module
+  # TODO: add docs
   defmacro __using__(options) do
     quote do
       @gettext_module unquote(options)[:gettext_module]

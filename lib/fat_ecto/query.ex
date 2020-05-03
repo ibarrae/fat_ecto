@@ -1,6 +1,8 @@
 defmodule FatEcto.FatQuery do
   # TODO: make paginator optional via global config and via options passed
   # TODO: Add more docs and examples for ex_doc
+  # TODO: use behaviors
+  # TODO: make function names more specific to current module
   defmacro __using__(options) do
     quote location: :keep do
       @moduledoc """

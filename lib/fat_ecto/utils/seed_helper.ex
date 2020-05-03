@@ -1,6 +1,8 @@
 defmodule FatUtils.SeedHelper do
   @moduledoc false
 
+  # TODO: remove seed helper and all its related data. even remove from configs
+  # TODO: remove csv as a deps in mix and mix.lock file
   defmacro __using__(options) do
     quote do
       use Ecto.Migration
@@ -56,7 +58,7 @@ defmodule FatUtils.SeedHelper do
 
         - `map`                          - Map containing the row of the csv file.
         - `should_coonvert_empty_to_nil` - Convert empty values to nil if pass true.
-        
+
       ### Examples
       ```
       iex> map = %{ "two" => ""}

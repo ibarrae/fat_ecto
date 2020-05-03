@@ -1,4 +1,6 @@
 defmodule FatEcto.Render do
+  # TODO: use behaviors
+  # TODO: make function names more specific to current module
   defmacro __using__(_options) do
     quote do
       def render_records(conn, records, meta, opts \\ []) do

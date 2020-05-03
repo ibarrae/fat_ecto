@@ -2,6 +2,8 @@ defmodule FatEcto.FatPaginator do
   @moduledoc false
   # TODO: make paginator optional via global config and via options passed
 
+  # TODO: use behaviors
+  # TODO: make function names more specific to current module
   defmacro __using__(options) do
     quote location: :keep do
       import Ecto.Query
